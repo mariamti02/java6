@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informasi Gempa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        * {
+           font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+           padding: 10px;
+           margin: 10px;
+           font-size: small;
+        }
+        td {
+            text-align: center;
+            font-size: small;
+        }
+        th {
+            font-size: small;
+            text-align: center;
+           
+        }
+    </style>  
+
+</head>
+  <body>
+    <div class="container">
+        <div class="card mb-5 mt-5">
+            <ul class="nav justify-content-center mt-4">
+        
+                <li class="nav-item">
+                  <a class="nav-link disabled">Mini Gempa Constructor</a>
+                </li>
+        
+            </ul>
+            <div class="card-body">
+                <table align="center"  cellspacing="0" width="100%">
+                    <thead>
+                        <tr border="1">
+                            <th bgcolor="Silver">No.</th>
+                            <th bgcolor="Silver">Lokasi</th>
+                            <th bgcolor="Silver">Skala</th>
+                            <th bgcolor="Silver">Keterangan Gempa</th>
+                           
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <script language="javascript">
+                          //fungsi variabel constructor dengan penjabaran atribut
+                            class Gempa{
+                                
+                                constructor(no, lokasi, skala, keterangan){
+                                    this.no = no;
+                                    this.lokasi = lokasi;
+                                    this.skala = skala;
+                                    this.keterangan = keterangan;
+
+
+                                }
+
+                              //loop untuk menjabarkan detail keterangan
+                            getKeterangan(){
+                                // for(this.skala = 1; this.skala < 10; this.skala++){
+                                    if (this.skala > 1 && this.skala <= 2){
+                                        this.keterangan = 'Tidak Terasa';
+                                    } else if (this.skala > 3 && this.skala <= 4){
+                                        this.keterangan = 'Bangunan Retak-Retak';
+                                    } else if (this.skala > 4 && this.skala <= 6){
+                                        this.keterangan = 'Bangunan Roboh';
+                                    } else if (this.skala > 6 && this.skala <= 10){
+                                        this.keterangan = 'Bangunan Roboh dan Berpotensi Tsunami';
+                                    } else {
+                                        this.keterangan = 'Aman...'
+                                    }
+
+                                    return this.keterangan;
+                                }
+
+                            // }
+
+    
+                              //cetak data pada objek
+                            cetak(){
+                                document.write(
+                                `<tr>
+                                    <td>${this.no++}</td>
+                                    <td>Kota ${this.lokasi}</td>
+                                    <td>${this.skala} Richter</td>
+                                    <td>${this.getKeterangan()}</td>
+                                  
+                                </tr>`
+                                 
+                              )
+                            }
+
+                    }
+
+                          
+                  //inisialisasi object untuk cetak data
+                            obj1 = new Gempa('1', 'Aceh', 6.4);
+                            obj1.cetak();
+
+                            obj2 = new Gempa('2', 'NTT', 3.4);
+                            obj2.cetak();
+
+                            obj3 = new Gempa('3', 'Papua', 5.4);
+                            obj3.cetak();
+
+                            obj4 = new Gempa('4', 'Jakarta', 7.0);
+                            obj4.cetak();
+
+                            obj5 = new Gempa('5', 'Padang', 5.0);
+                            obj5.cetak();
+
+                            obj6 = new Gempa('6', 'Bengkulu', 5.9);
+                            obj6.cetak();
+
+                            obj7 = new Gempa('7', 'Bandung', 6.8);
+                            obj7.cetak();
+
+                            obj8 = new Gempa('8', 'Bali', 4.0);
+                            obj8.cetak();
+
+                            obj9 = new Gempa('9', 'NTB', 6.7);
+                            obj9.cetak();
+
+                            obj10 = new Gempa('10', 'Maluku', 2.0);
+                            obj10.cetak();
+                              
+                        </script>
+                      </tbody>
+            </div>
+        </div>  
+    </body> 
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  
+</html>
